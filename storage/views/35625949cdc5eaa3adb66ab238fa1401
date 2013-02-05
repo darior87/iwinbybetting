@@ -1,0 +1,20 @@
+
+<?php \Laravel\Section::start('content'); ?>
+
+<ul data-role="listview" data-filter="true" data-filter-placeholder="Search ticker or firm name..." data-inset="true">
+    <li data-filtertext="Song1 Genre1 Artist1"><a href="#">Song1Genre1Artist1</a></li>
+    <li data-filtertext="Song2 Genre2 Artist2"><a href="#">Song2Genre2Artist2</a></li>
+    <li data-filtertext="Song3 Genre3 Artist3"><a href="#">Song3Genre3Artist3</a></li>
+    <li data-filtertext="Song4 Genre4 Artist4"><a href="#">Song4Genre4Artist4</a></li>
+    <li data-filtertext="Song5 Genre5 Artist5"><a href="#">Song5Genre5Artist5</a></li>
+    <li data-filtertext="Song6 Genre6 Artist6"><a href="#">Song6Genre6Artist6</a></li>
+    <li data-filtertext="Song7 Genre7 Artist7"><a href="#">Song7Genre7Artist7</a></li>
+    <li data-filtertext="Song8 Genre8 Artist8"><a href="#">Song8Genre8Artist8</a></li>
+</ul>
+
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('page-title'); ?>
+<h3>Request A Song</h3>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

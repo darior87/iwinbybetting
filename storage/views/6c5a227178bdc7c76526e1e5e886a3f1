@@ -1,0 +1,11 @@
+
+<?php \Laravel\Section::start('content'); ?>
+<?php //location index ?>
+
+
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('page-title'); ?>
+    <h3>Contact Us</h3>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

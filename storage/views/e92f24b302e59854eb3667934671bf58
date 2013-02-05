@@ -1,0 +1,39 @@
+
+<?php \Laravel\Section::start('title'); ?>
+Partite - <?php echo $campionato->nome; ?>
+<?php \Laravel\Section::stop(); ?>
+
+
+<?php \Laravel\Section::start('menu'); ?>
+<?php echo render("layouts.menu",array(
+    "active_squadre"    =>  "",
+    "active_pronostici" =>  "active ",
+    "active_campionati" =>  "",
+    "active_partite"    =>  "",
+    "campionati"        =>  $campionati
+)) ?>
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('content'); ?>
+<div class="container-fluid">
+    <table class="table table-hover">
+        <tr><td colspan="3"><?php echo var_dump($error); ?></td></tr>
+        <?php foreach ($partite as $p) { ?>
+                <tr> 
+                    <td>
+                        <?php echo DB::table('squadre')->where('id','=',$p->casa)->first()->nome; ?>
+                         VS 
+                        <?php echo DB::table('squadre')->where('id','=',$p->trasferta)->first()->nome; ?>                       
+                    </td>
+                    <td>
+                        <?php echo $p->data; ?>
+                    </td>
+                    <td>
+                        <a href="<?php echo URL::base()."/pronostici/index/_/".$p->id ; ?>" class="btn"><i class="icon-arrow-right"></i></a>
+                    </td>
+                </tr> 
+        <?php } ?> 
+    </table>
+</div>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

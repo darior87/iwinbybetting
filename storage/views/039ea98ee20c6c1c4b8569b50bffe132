@@ -1,0 +1,27 @@
+
+<?php \Laravel\Section::start('content'); ?>
+<form action="<?php echo URL::base()?>/forgot/username" method="post">
+    
+    <label for="user">Username</label>
+    <input type="text" name="username" id="user" />
+    
+    <input type="submit" name="submit" value="Send" />
+        
+</form>
+<form action="<?php echo URL::base()?>/forgot/email" method="post">
+
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" value=""  />
+    
+    <input type="submit" name="submit" value="Send" />
+    
+</form>
+        
+
+<?php \Laravel\Section::stop(); ?>
+
+
+<?php \Laravel\Section::start('page-title'); ?>
+    <h3>Forgot Password</h3>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

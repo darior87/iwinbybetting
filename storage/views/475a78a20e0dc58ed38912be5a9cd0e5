@@ -1,0 +1,25 @@
+
+<?php \Laravel\Section::start('title'); ?>
+Login
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('menu'); ?>
+
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('content'); ?>
+<div class="container">
+
+      <form class="form-signin" action="<?php echo URL::to_action("login@validate")?>" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" name="username" class="input-block-level" placeholder="Username">
+        <input type="password" name="password" class="input-block-level" placeholder="Password">
+
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+      </form>
+        <?php if($error != null):?>
+            <?php var_dump($error); ?>
+        <?php endif;?>
+    </div> <!-- /container -->
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

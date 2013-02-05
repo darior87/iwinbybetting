@@ -1,0 +1,23 @@
+
+<?php \Laravel\Section::start('content'); ?>
+<?php //location index ?>
+
+<ul data-role="listview" data-inset="true">
+    <li data-role="fieldcontain">
+        <form action="" method="post">
+            
+            <input type="text" name="comment" value="" data-mini="true" />
+            <input type="button" value="Send" data-role="button" data-mini="true" data-inline="true" />
+            
+        </form>
+    </li>
+    <li>comment 1</li>
+    <li>comment 2</li>
+    <li>comment 3</li>
+</ul>
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('page-title'); ?>
+    <h3>Say Something Location_Name</h3>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

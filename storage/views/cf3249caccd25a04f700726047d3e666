@@ -1,0 +1,15 @@
+
+<?php \Laravel\Section::start('content'); ?>
+<?php //location index ?>
+
+<ul data-role="listview">
+    <li><a href="<?php echo URL::base()?>/location/qr">QR Code</a></li>
+    <li><a href="<?php echo URL::base()?>/location/map">Select Address</a></li>
+    <li><a href="<?php echo URL::base()?>/me/favourites">Through Favs</a></li>
+</ul>
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('page-title'); ?>
+    <h3>Pick Up Location</h3>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

@@ -1,0 +1,52 @@
+
+<?php \Laravel\Section::start('content'); ?>
+
+<ul data-role="listview" data-inset="true">
+    <li data-role="fieldcontain">
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                Title
+            </div>
+            <div class="ui-block-b">
+                Song Title
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                Author
+            </div>
+            <div class="ui-block-b">
+                Author Name
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                Genre
+            </div>
+            <div class="ui-block-b">
+                Genre Name
+            </div>
+        </div>
+    </li>
+    <li data-role="fieldcontain">
+        <form action="<?php echo URL::base() ?>/location/comment/<?php echo $id?>/now" method="post">
+            <h3>Say Something About This Song</h3>
+        <p>    
+            <input type="text" name="comment" value="" data-mini="true" />
+            <input type="button" value="Send" data-role="button" data-mini="true" data-inline="true" />
+        </p>
+        </form>
+        
+    </li>
+</ul>
+
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('page-title'); ?>
+<h3>Now Playing...</h3>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

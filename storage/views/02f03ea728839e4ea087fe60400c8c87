@@ -1,0 +1,28 @@
+
+<?php \Laravel\Section::start('content'); ?>
+<form action="<?php echo URL::base()?>/location" method="post">
+    
+    <label for="user">Username</label>
+    <input type="text" name="username" id="user" />
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" value=""  />
+    
+    <input type="submit" name="submit" value="Sign In" />
+    
+    <h3>Not Registered?</h3>
+    <ul data-role="listview">
+        <li><a href="<?php echo URL::base()?>/signup">SignUp</a></li>
+        <li><a href="<?php echo URL::base()?>/forgot">Forgot Password?</a></li>
+        <li><a href="<?php echo URL::base()?>/location">Take A Free Tour</a></li>
+    </ul>
+</form>
+        
+
+<?php \Laravel\Section::stop(); ?>
+
+
+<?php \Laravel\Section::start('page-title'); ?>
+    <h3>Login</h3>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.home')->with(get_defined_vars())->render(); ?>

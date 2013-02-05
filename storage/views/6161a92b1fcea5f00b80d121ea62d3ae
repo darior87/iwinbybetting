@@ -1,0 +1,28 @@
+
+<?php \Laravel\Section::start('content'); ?>
+
+    <ul data-role="listview" >
+        <div id ="location-search"</div>
+    </ul><!-- /content -->
+        
+    <form> 
+        <div data-role="fieldcontain">
+            <label for="qr">Photo</label>
+            <input type="file" name="qr" id="qrCode"  />
+        </div>
+    </form>
+
+    </div><!-- /page -->
+    <script> 
+        callback = function(data){ 
+            $("#location-search").html("<li><a href=\"#\">"+data+"</a></li>");
+        } 
+        QRIfy('qrCode', callback); 
+    </script>
+
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('page-title'); ?>
+    <h3>Scan The QR Code</h3>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

@@ -1,0 +1,31 @@
+
+<?php \Laravel\Section::start('content'); ?>
+<form action="<?php echo URL::base()?>/signup/signmeup" method="post">
+    
+    <label for="user">Name</label>
+    <input type="text" name="name" id="user" />
+    
+    <label for="user">Username</label>
+    <input type="text" name="username" id="user" />
+
+    <label for="email">Email</label>
+    <input type="password" name="password" id="password" value=""  />
+    
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" value=""  />
+    
+    <label for="cpassword">Confirm Password</label>
+    <input type="password" name="cpassword" id="cpassword" value=""  />
+    
+    <input type="submit" name="submit" value="Signup" />
+    
+</form>
+        
+
+<?php \Laravel\Section::stop(); ?>
+
+
+<?php \Laravel\Section::start('page-title'); ?>
+    <h3>Forgot Password</h3>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

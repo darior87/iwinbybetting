@@ -1,0 +1,30 @@
+
+<?php \Laravel\Section::start('title'); ?>
+Pronostici
+<?php \Laravel\Section::stop(); ?>
+
+
+<?php \Laravel\Section::start('menu'); ?>
+<?php echo render("layouts.menu",array(
+    "active_squadre"    =>  "",
+    "active_pronostici" =>  "active ",
+    "active_campionati" =>  "",
+    "active_partite"    =>  "",
+    "campionati"        =>  $campionati
+)) ?>
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('content'); ?>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <table class="table table-hover">
+        <tr>
+            <td>
+                Seleziona Campionato dal menu...
+            </td>
+        </tr>
+    </table>
+    </div>
+</div>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

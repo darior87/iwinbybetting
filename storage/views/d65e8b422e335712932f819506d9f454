@@ -1,0 +1,15 @@
+
+<?php \Laravel\Section::start('content'); ?>
+<?php //location index ?>
+
+<ul data-role="listview">
+    <li><a href="<?php echo URL::base()?>/location/index/1">Location 1</a></li>
+    <li><a href="<?php echo URL::base()?>/location/index/2">Location 2</a></li>
+    <li><a href="<?php echo URL::base()?>/location/index/3">Location 3</a></li>
+</ul>
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('page-title'); ?>
+    <h3>My Favs</h3>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>

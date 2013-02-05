@@ -1,0 +1,38 @@
+
+<?php \Laravel\Section::start('title'); ?>
+Partite
+<?php \Laravel\Section::stop(); ?>
+
+
+<?php \Laravel\Section::start('menu'); ?>
+<?php echo render("layouts.menu",array(
+    "active_squadre"    =>  "",
+    "active_pronostici" =>  "",
+    "active_campionati" =>  "",
+    "active_partite"    =>  "active ",
+    "campionati"        =>  $campionati
+)) ?>
+<?php \Laravel\Section::stop(); ?>
+
+<?php \Laravel\Section::start('content'); ?>
+<div class="container-fluid">
+    <table class="table table-hover">
+        <th>Partite in errore...</th>
+        <?php if (count($partiteu) == 0) echo "<tr><td>nessuna</td></tr>"; ?>
+        <?php foreach ($partiteu as $p) { ?>
+                <tr>                    
+                    <td><div style="margin-top: 20px;">Casa: <?php echo $s->casa; ?></div></td>
+                    <td><div style="margin-top: 20px;">Trasferta: <?php echo $s->trasferta; ?></div></td>
+                    <td><div style="margin-top: 20px;">Campionato: <?php echo $s->campionato; ?></div></td>
+                    <td><div style="margin-top: 20px;"><a href="<?php echo URL::base()."/partite/delete/".$p->id; ?>" class="btn" ><i class="icon-remove"></i></a></div></td>                    
+                </tr> 
+        <?php } ?> 
+        <tr>
+            <td>
+                <?php echo $error; ?>
+            </td>
+        </tr>
+    </table>
+</div>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('layouts.main')->with(get_defined_vars())->render(); ?>
